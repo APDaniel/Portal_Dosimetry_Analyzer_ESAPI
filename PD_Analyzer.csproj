@@ -1,0 +1,348 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{028918AE-69D5-4BE8-A125-CE095444528C}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>PD_Analyzer</RootNamespace>
+    <AssemblyName>PD_Analyzer</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="IPDMCTRL, Version=11.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\x64\Debug\IPDMCTRL.dll</HintPath>
+    </Reference>
+    <Reference Include="Mergecom">
+      <HintPath>bin\x64\Debug\Mergecom.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.mshtml, Version=7.0.3300.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>bin\x64\Debug\Microsoft.mshtml.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.InfoPath.Permission, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\x64\Debug\Microsoft.Office.InfoPath.Permission.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Access, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\..\..\..\..\Program Files (x86)\Microsoft Visual Studio\Shared\Visual Studio Tools for Office\PIA\Office14\Microsoft.Office.Interop.Access.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.interop.access.dao, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\..\..\..\..\Program Files (x86)\Microsoft Visual Studio\Shared\Visual Studio Tools for Office\PIA\Office14\Microsoft.Office.interop.access.dao.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\..\Microsoft.Office.Interop.Excel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Graph, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\..\..\..\..\Program Files (x86)\Microsoft Visual Studio\Shared\Visual Studio Tools for Office\PIA\Office14\Microsoft.Office.Interop.Graph.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.InfoPath, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\..\..\..\..\Program Files (x86)\Microsoft Visual Studio\Shared\Visual Studio Tools for Office\PIA\Office14\Microsoft.Office.Interop.InfoPath.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.InfoPath.SemiTrust, Version=11.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\x64\Debug\Microsoft.Office.Interop.InfoPath.SemiTrust.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.InfoPath.Xml, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\..\..\..\..\Program Files (x86)\Microsoft Visual Studio\Shared\Visual Studio Tools for Office\PIA\Office14\Microsoft.Office.Interop.InfoPath.Xml.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.MSProject, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\..\..\..\..\Program Files (x86)\Microsoft Visual Studio\Shared\Visual Studio Tools for Office\PIA\Office14\Microsoft.Office.Interop.MSProject.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.OneNote, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\..\..\..\..\Program Files (x86)\Microsoft Visual Studio\Shared\Visual Studio Tools for Office\PIA\Office14\Microsoft.Office.Interop.OneNote.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Outlook, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\..\..\..\..\Program Files (x86)\Microsoft Visual Studio\Shared\Visual Studio Tools for Office\PIA\Office14\Microsoft.Office.Interop.Outlook.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.OutlookViewCtl, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\..\..\..\..\Program Files (x86)\Microsoft Visual Studio\Shared\Visual Studio Tools for Office\PIA\Office14\Microsoft.Office.Interop.OutlookViewCtl.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.PowerPoint, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\..\..\..\..\Program Files (x86)\Microsoft Visual Studio\Shared\Visual Studio Tools for Office\PIA\Office14\Microsoft.Office.Interop.PowerPoint.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Publisher, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\..\..\..\..\Program Files (x86)\Microsoft Visual Studio\Shared\Visual Studio Tools for Office\PIA\Office14\Microsoft.Office.Interop.Publisher.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.SharePointDesigner, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\..\..\..\..\Program Files (x86)\Microsoft Visual Studio\Shared\Visual Studio Tools for Office\PIA\Office14\Microsoft.Office.Interop.SharePointDesigner.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.SharePointDesignerPage, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\..\..\..\..\Program Files (x86)\Microsoft Visual Studio\Shared\Visual Studio Tools for Office\PIA\Office14\Microsoft.Office.Interop.SharePointDesignerPage.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.SmartTag, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\..\..\..\..\Program Files (x86)\Microsoft Visual Studio\Shared\Visual Studio Tools for Office\PIA\Office14\Microsoft.Office.Interop.SmartTag.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Visio, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\..\..\..\..\Program Files (x86)\Microsoft Visual Studio\Shared\Visual Studio Tools for Office\PIA\Office14\Microsoft.Office.Interop.Visio.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Visio.SaveAsWeb, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\..\..\..\..\Program Files (x86)\Microsoft Visual Studio\Shared\Visual Studio Tools for Office\PIA\Office14\Microsoft.Office.Interop.Visio.SaveAsWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.VisOcx, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\..\..\..\..\Program Files (x86)\Microsoft Visual Studio\Shared\Visual Studio Tools for Office\PIA\Office14\Microsoft.Office.Interop.VisOcx.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Word, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\..\..\..\..\Program Files (x86)\Microsoft Visual Studio\Shared\Visual Studio Tools for Office\PIA\Office14\Microsoft.Office.Interop.Word.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Vbe.Interop, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\..\..\..\..\Program Files (x86)\Microsoft Visual Studio\Shared\Visual Studio Tools for Office\PIA\Office14\Microsoft.Vbe.Interop.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Vbe.Interop.Forms, Version=11.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\..\..\..\..\Program Files (x86)\Microsoft Visual Studio\Shared\Visual Studio Tools for Office\PIA\Office14\Microsoft.Vbe.Interop.Forms.dll</HintPath>
+    </Reference>
+    <Reference Include="Office, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\..\..\..\..\Program Files (x86)\Microsoft Visual Studio\Shared\Visual Studio Tools for Office\PIA\Office14\Office.dll</HintPath>
+    </Reference>
+    <Reference Include="Poly2Tri">
+      <HintPath>bin\x64\Debug\Poly2Tri.dll</HintPath>
+    </Reference>
+    <Reference Include="PortalDosimetry">
+      <HintPath>bin\x64\Debug\PortalDosimetry.dll</HintPath>
+    </Reference>
+    <Reference Include="SlimDX">
+      <HintPath>bin\x64\Debug\SlimDX.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="VMS.CA.Base.Common">
+      <HintPath>bin\x64\Debug\VMS.CA.Base.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="VMS.CA.Core.Base">
+      <HintPath>bin\x64\Debug\VMS.CA.Core.Base.dll</HintPath>
+    </Reference>
+    <Reference Include="VMS.CA.Core.BL">
+      <HintPath>bin\x64\Debug\VMS.CA.Core.BL.dll</HintPath>
+    </Reference>
+    <Reference Include="VMS.CA.Core.BL.Image">
+      <HintPath>bin\x64\Debug\VMS.CA.Core.BL.Image.dll</HintPath>
+    </Reference>
+    <Reference Include="VMS.CA.Core.Interface">
+      <HintPath>bin\x64\Debug\VMS.CA.Core.Interface.dll</HintPath>
+    </Reference>
+    <Reference Include="VMS.CA.Core.Interface.Base.Vol3D">
+      <HintPath>bin\x64\Debug\VMS.CA.Core.Interface.Base.Vol3D.dll</HintPath>
+    </Reference>
+    <Reference Include="VMS.CA.Core.IP.Base">
+      <HintPath>bin\x64\Debug\VMS.CA.Core.IP.Base.dll</HintPath>
+    </Reference>
+    <Reference Include="VMS.CA.Core.IP.CoreAlgo">
+      <HintPath>bin\x64\Debug\VMS.CA.Core.IP.CoreAlgo.dll</HintPath>
+    </Reference>
+    <Reference Include="VMS.CA.Core.IP.PUToolkit">
+      <HintPath>bin\x64\Debug\VMS.CA.Core.IP.PUToolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="VMS.CA.Core.ProcImage.BLEnhance">
+      <HintPath>bin\x64\Debug\VMS.CA.Core.ProcImage.BLEnhance.dll</HintPath>
+    </Reference>
+    <Reference Include="VMS.CA.Core.ProcImage.Default">
+      <HintPath>bin\x64\Debug\VMS.CA.Core.ProcImage.Default.dll</HintPath>
+    </Reference>
+    <Reference Include="VMS.CA.Core.Scripting.Engine">
+      <HintPath>bin\x64\Debug\VMS.CA.Core.Scripting.Engine.dll</HintPath>
+    </Reference>
+    <Reference Include="VMS.CA.Core.UI">
+      <HintPath>bin\x64\Debug\VMS.CA.Core.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="VMS.CA.Core.Viewing.Base">
+      <HintPath>bin\x64\Debug\VMS.CA.Core.Viewing.Base.dll</HintPath>
+    </Reference>
+    <Reference Include="VMS.CA.Core.Viewing.Common">
+      <HintPath>bin\x64\Debug\VMS.CA.Core.Viewing.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="VMS.CA.Core.Viewing.CoreRendererAlgo">
+      <HintPath>bin\x64\Debug\VMS.CA.Core.Viewing.CoreRendererAlgo.dll</HintPath>
+    </Reference>
+    <Reference Include="VMS.CA.Core.Viewing.CoreRendererDX">
+      <HintPath>bin\x64\Debug\VMS.CA.Core.Viewing.CoreRendererDX.dll</HintPath>
+    </Reference>
+    <Reference Include="VMS.CA.DatabaseAccess">
+      <HintPath>bin\x64\Debug\VMS.CA.DatabaseAccess.dll</HintPath>
+    </Reference>
+    <Reference Include="VMS.CA.DatabaseAccess.Interface">
+      <HintPath>bin\x64\Debug\VMS.CA.DatabaseAccess.Interface.dll</HintPath>
+    </Reference>
+    <Reference Include="VMS.CA.DICOM.Converter">
+      <HintPath>bin\x64\Debug\VMS.CA.DICOM.Converter.dll</HintPath>
+    </Reference>
+    <Reference Include="VMS.CA.DICOM.DB">
+      <HintPath>bin\x64\Debug\VMS.CA.DICOM.DB.dll</HintPath>
+    </Reference>
+    <Reference Include="VMS.CA.DICOM.Toolkit">
+      <HintPath>bin\x64\Debug\VMS.CA.DICOM.Toolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="VMS.CA.OMBase.OM">
+      <HintPath>bin\x64\Debug\VMS.CA.OMBase.OM.dll</HintPath>
+    </Reference>
+    <Reference Include="VMS.CA.OMDB.BL">
+      <HintPath>bin\x64\Debug\VMS.CA.OMDB.BL.dll</HintPath>
+    </Reference>
+    <Reference Include="VMS.CA.OMDB.OM">
+      <HintPath>bin\x64\Debug\VMS.CA.OMDB.OM.dll</HintPath>
+    </Reference>
+    <Reference Include="VMS.CA.OMDB.Persistence">
+      <HintPath>bin\x64\Debug\VMS.CA.OMDB.Persistence.dll</HintPath>
+    </Reference>
+    <Reference Include="VMS.CA.OMDB.Util">
+      <HintPath>bin\x64\Debug\VMS.CA.OMDB.Util.dll</HintPath>
+    </Reference>
+    <Reference Include="VMS.CA.Scripting">
+      <HintPath>bin\x64\Debug\VMS.CA.Scripting.dll</HintPath>
+    </Reference>
+    <Reference Include="VMS.CA.Scripting.Wizard">
+      <HintPath>bin\x64\Debug\VMS.CA.Scripting.Wizard.dll</HintPath>
+    </Reference>
+    <Reference Include="VMS.CA.SFBridge.Interface">
+      <HintPath>bin\x64\Debug\VMS.CA.SFBridge.Interface.dll</HintPath>
+    </Reference>
+    <Reference Include="VMS.CA.SFHosting.Interface">
+      <HintPath>bin\x64\Debug\VMS.CA.SFHosting.Interface.dll</HintPath>
+    </Reference>
+    <Reference Include="VMS.DV.PD.Algos">
+      <HintPath>bin\x64\Debug\VMS.DV.PD.Algos.dll</HintPath>
+    </Reference>
+    <Reference Include="VMS.DV.PD.BL">
+      <HintPath>bin\x64\Debug\VMS.DV.PD.BL.dll</HintPath>
+    </Reference>
+    <Reference Include="VMS.DV.PD.Scripting">
+      <HintPath>bin\x64\Debug\VMS.DV.PD.Scripting.dll</HintPath>
+    </Reference>
+    <Reference Include="VMS.GTC.Markers">
+      <HintPath>bin\x64\Debug\VMS.GTC.Markers.dll</HintPath>
+    </Reference>
+    <Reference Include="VMS.IAC.Algos">
+      <HintPath>bin\x64\Debug\VMS.IAC.Algos.dll</HintPath>
+    </Reference>
+    <Reference Include="VMS.IAC.Core.Common">
+      <HintPath>bin\x64\Debug\VMS.IAC.Core.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="VMS.IAC.Core.Marker">
+      <HintPath>bin\x64\Debug\VMS.IAC.Core.Marker.dll</HintPath>
+    </Reference>
+    <Reference Include="VMS.IAC.Core.Matching">
+      <HintPath>bin\x64\Debug\VMS.IAC.Core.Matching.dll</HintPath>
+    </Reference>
+    <Reference Include="VMS.OAL.BL">
+      <HintPath>bin\x64\Debug\VMS.OAL.BL.dll</HintPath>
+    </Reference>
+    <Reference Include="VMS.OAL.UI">
+      <HintPath>bin\x64\Debug\VMS.OAL.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="VMS.RT.PlanIntegrity">
+      <HintPath>bin\x64\Debug\VMS.RT.PlanIntegrity.dll</HintPath>
+    </Reference>
+    <Reference Include="VMS.Utilities.MiniDumper">
+      <HintPath>bin\x64\Debug\VMS.Utilities.MiniDumper.dll</HintPath>
+    </Reference>
+    <Reference Include="VMS.Utilities.VVol3DWrapper">
+      <HintPath>bin\x64\Debug\VMS.Utilities.VVol3DWrapper.dll</HintPath>
+    </Reference>
+    <Reference Include="ZedGraph">
+      <HintPath>bin\x64\Debug\ZedGraph.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
